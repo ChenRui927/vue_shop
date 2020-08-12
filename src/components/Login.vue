@@ -39,12 +39,12 @@ export default {
         // 验证用户名
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 3, max: 6, message: '长度在 3 到 8 个字符', trigger: 'blur' }
+          { min: 3, max: 10, message: '长度在 3~10 个字符', trigger: 'blur' }
         ],
         // 验证密码
         password: [
           { required: true, message: '请输入登录密码', trigger: 'blur' },
-          { min: 6, max: 15, message: '长度在 6 到 10 个字符', trigger: 'blur' }
+          { min: 6, max: 15, message: '长度在 6~15 个字符', trigger: 'blur' }
         ]
       }
     }
