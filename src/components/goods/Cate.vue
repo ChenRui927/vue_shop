@@ -49,12 +49,12 @@
               <el-input v-model="addCateForm.cat_name"></el-input>
             </el-form-item>
             <el-form-item label="父级分类：">
-                <!-- options 用来指定数据源 -->
-                <!-- props 用来指定配置对象 -->
-                <!-- clearable 清空选项 -->
-                <!-- change-on-select 可以选择任意一级分类 -->
-               <el-cascader expand-trigger="hover" :options="parentCateList" :props="cascaderProps" v-model="selectedKeys" @change="parentCateChanged" clearable change-on-select>
-               </el-cascader>
+              <!-- options 用来指定数据源 -->
+              <!-- props 用来指定配置对象 -->
+              <!-- clearable 清空选项 -->
+              <!-- change-on-select 可以选择任意一级分类 -->
+              <el-cascader expand-trigger="hover" :options="parentCateList" :props="cascaderProps" v-model="selectedKeys" @change="parentCateChanged" clearable change-on-select>
+              </el-cascader>
             </el-form-item>
           </el-form>
           <span slot="footer" class="dialog-footer">

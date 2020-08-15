@@ -24,6 +24,8 @@ module.exports = {
       // 参数不检查
       'args': 'none'
     }],
-     "no-unused-vars": "off"
+     "no-unused-vars": "off",
+     "camelcase": [0, {"properties": "never"}]
+    //  "camelcase": ["error", {"allow": ["aa_bb"]}]
   }
 }
