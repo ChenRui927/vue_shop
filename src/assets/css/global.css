@@ -25,3 +25,8 @@ body,
 .el-pagination {
     margin-top: 15px;
 }
+
+/* 在全局的global.css样式中给el-cascader-panel添加高度 因版本不一样，显示不完全，无滚动条*/
+.el-cascader-panel {
+    height: 200px;
+}
