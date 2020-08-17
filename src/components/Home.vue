@@ -84,6 +84,7 @@ export default {
       this.$router.push('/login')
     },
     // 获取所有的菜单
+    
     async getMenuList() {
       const { data: res } = await this.$http.get('menus')
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)

@@ -19,17 +19,35 @@ import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 
+// 导入Nprogress（进度条） 包对应的js和css 
+import Nprogress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 // 全局配置axios
 import axios from 'axios'
+
 // 配置请求的根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
-// 配置请求拦截器
+
+// 在 request 拦截器中，显示进度条 Nprogress.start()
+// 配置请求拦截器，请求拦截器是在请求数据发出前设置一些信息
 axios.interceptors.request.use(config => {
+  // 展示进度条
+  Nprogress.start()
   // 为请求头对象，添加 token 验证 Authorization 字段
   config.headers.Authorization = window.sessionStorage.getItem('token')
   // 在最后必须 return config
   return config
 })
+// 在 response 拦截器中，隐藏进度条 Nprogress.done()
+// 配置响应拦截器，响应拦截器是在获取数据之前，对数据进行一些加工处理
+axios.interceptors.response.use(config => {
+  // 隐藏进度条
+  Nprogress.done()
+  // 在最后必须 return config
+  return config
+})
+
 // 将axios挂载到vue的原型对象上,这样每一个vue的组件都可以通过this直接访问到$http，从而发起ajax请求
 Vue.prototype.$http = axios
 
