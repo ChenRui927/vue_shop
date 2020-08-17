@@ -8,7 +8,8 @@ module.exports = {
     '@vue/standard'
   ],
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
+    // parser: 'vue-eslint-parser',
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -26,6 +27,18 @@ module.exports = {
     }],
      "no-unused-vars": "off",
      "camelcase": [0, {"properties": "never"}]
-    //  "camelcase": ["error", {"allow": ["aa_bb"]}]
+    //  "camelcase": ["error", {"allow": ["aa_bb"]}],
+      // test:/\.js$/,
+      // use: [
+      //   {
+      //     loader: "babel-loader",
+      //     options: {
+      //       presets: ['env']
+      //     }
+      //   },
+      //   "eslint-loader"
+      // ],
+      // exclude: __dirname + 'node_modules',
+      // include: __dirname + 'src'
   }
 }
